@@ -134,12 +134,15 @@ Desktop.ini
 ## Maven
 #############
 target/
-
 log
 mRemoteNG.xml*backup*
+dependency-reduced-pom.xml
+node_modules/
 
 # Intellij
 .idea
 *.iml
 */*.iml
 log/
+
+

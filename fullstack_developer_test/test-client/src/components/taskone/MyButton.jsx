@@ -1,14 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const MyButton = ({
-  imgUrl,
-  alt,
-  selected,
-  selection,
-  onClick,
-}) => {
-  const getSelectedClass = (current) => (current === selected ? 'selected' : '');
+const MyButton = ({ imgUrl, alt, selected, selection, onClick }) => {
+  const getSelectedClass = current => (current === selected ? "selected" : "");
 
   return (
     <button
@@ -16,10 +10,7 @@ const MyButton = ({
       type="button"
       onClick={onClick}
     >
-      <img
-        src={imgUrl}
-        alt={alt}
-      />
+      <img src={imgUrl} alt={alt} />
       <span>{selected}</span>
     </button>
   );
@@ -30,11 +21,11 @@ MyButton.propTypes = {
   alt: PropTypes.string.isRequired,
   selected: PropTypes.string.isRequired,
   selection: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 MyButton.defaultProps = {
-  onClick: () => {},
+  onClick: () => {}
 };
 
 export default MyButton;

@@ -28,49 +28,56 @@ const Todo = ({}) => {
     }
   }, [user]);
 
-  const getTodo = e => {
+  const fetchTodo = e => {
     setUser(name);
   };
-  console.log("data ", data);
   return (
-    <div className="task" style={{ height: "100%" }}>
-      {isLoading && <h3>Loading...</h3>}
-      <div>
-        <h1>TODO</h1>
-        <div>
-          <div>Enter user name:</div>
-          <input
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-          <button onClick={getTodo}>Go</button>
-        </div>
-        {hasError.error && <h3>{`Error: ${hasError.message}`}</h3>}
+    <div className="task">
+      <h2>TODO</h2>
+      <div style={{ display: "inline" }}>
+        <div style={{ display: "inline" }}>User Name: </div>
+        <input
+          type="text"
+          value={name}
+          onChange={e => setName(e.target.value)}
+        />
+        <button className="todo-submit" onClick={fetchTodo}>
+          Go
+        </button>
+        {isLoading && <div className="loader"></div>}
+
         {data && data.user && data.user.id && (
-          <div>
-            <div>ID: {data.user.id}</div>
-            <div>Name: {data.user.name}</div>
-            <div>Email: {data.user.email}</div>
-            <div>Website: {data.user.website}</div>
-          </div>
-        )}
-        {data && data.todos && (
-          <div>
-            {data.todos.map(t => (
-              <div key={t.id}>
-
-               <img
-                  src={t.completed ? "checked.png" : "unchecked.png"}
-                  style={{ width: "20px", height: "20px" }}
-                />
-
-                <span>{t.title}</span>{" "}
-              </div>
-            ))}
+          <div className="todo-user">
+            <div>
+              <b>ID:</b> {data.user.id}
+            </div>
+            <div>
+              <b>Name:</b> {data.user.name}
+            </div>
+            <div>
+              <b>Email:</b> {data.user.email}
+            </div>
+            <div>
+              <b>Website:</b> {data.user.website}
+            </div>
           </div>
         )}
       </div>
+      {hasError.error && <h3>{`Error: ${hasError.message}`}</h3>}
+
+      {data && data.todos && data.todos.length !== 0 && (
+        <div className="todo-list">
+          {data.todos.map(t => (
+            <div key={t.id} className="todo-item">
+              <img
+                className="todo-check"
+                src={t.completed ? "checked.png" : "unchecked.png"}
+              />
+              <span className="todo-item-title">{t.title}</span>{" "}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

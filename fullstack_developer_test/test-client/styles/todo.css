@@ -1,0 +1,35 @@
+.todo-submit {
+  display: inline;
+  height: 24px;
+  margin: 0px 6px;
+  padding: 4px;
+}
+
+.todo-user {
+  border: solid;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-style: groove;
+}
+.todo-list {
+  border: solid;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-style: groove;
+}
+
+.todo-item {
+  padding: 0;
+  margin: 2px 0;
+}
+
+.todo-item-title {
+  padding: 0px 5px;
+  vertical-align: super;
+}
+
+.todo-check {
+  height: 24px;
+  width: 24px;
+  padding: 2px;
+}

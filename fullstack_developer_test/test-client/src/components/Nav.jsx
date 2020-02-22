@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/theme-toggle.css";
 import { NavLink } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "@components/theme/useDarkMode";

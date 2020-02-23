@@ -30,6 +30,7 @@ const Todo = ({}) => {
   }, [user]);
 
   const fetchTodo = e => {
+  console.log('==================',name)
     setUser(name);
   };
   return (

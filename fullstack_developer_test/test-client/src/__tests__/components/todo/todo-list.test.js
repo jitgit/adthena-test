@@ -12,10 +12,19 @@ describe("TodoList", () => {
   });
 
   it("displays todo list of length 1", () => {
-    const todoList = [{id:'',completed:false,title:'do something that make a difference'}];
+    const todoList = [
+      {
+        id: "1",
+        completed: false,
+        title: "do something that make a difference"
+      }
+    ];
     const wrapper = mount(<TodoList todos={todoList} />);
     expect(wrapper.find("div")).toHaveLength(2);
     expect(wrapper.find("img")).toHaveLength(1);
     expect(wrapper.find("span")).toHaveLength(1);
+    expect(wrapper.find("span").text()).toEqual(
+      "do something that make a difference"
+    );
   });
 });

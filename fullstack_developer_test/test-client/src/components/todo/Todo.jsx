@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import dao from "@services/dao";
+import TodoList from "./todo-list";
 
 const Todo = ({}) => {
   const [user, setUser] = useState("");
@@ -64,20 +65,7 @@ const Todo = ({}) => {
         )}
       </div>
       {hasError.error && <h3>{`Error: ${hasError.message}`}</h3>}
-
-      {data && data.todos && data.todos.length !== 0 && (
-        <div className="todo-list">
-          {data.todos.map(t => (
-            <div key={t.id} className="todo-item">
-              <img
-                className="todo-check"
-                src={t.completed ? "checked.png" : "unchecked.png"}
-              />
-              <span className="todo-item-title">{t.title}</span>{" "}
-            </div>
-          ))}
-        </div>
-      )}
+      <TodoList todos={data.todos} />
     </div>
   );
 };

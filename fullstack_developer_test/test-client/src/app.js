@@ -1,4 +1,8 @@
 import "../styles/theme-toggle.css";
+import "../styles/theme-toggle.css";
+import "../styles/todo.css";
+import "../styles/loader.css";
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";

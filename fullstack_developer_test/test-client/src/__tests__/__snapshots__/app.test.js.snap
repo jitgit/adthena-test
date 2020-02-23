@@ -17,6 +17,49 @@ Array [
     >
       Task Two
     </a>
+    <a
+      href="/todo"
+    >
+      TODO
+    </a>
+    <div
+      class="switch-container"
+    >
+      <div
+        class="switch switch-yellow"
+      >
+        <input
+          checked=""
+          class="switch-input"
+          id="week"
+          name="theme"
+          readonly=""
+          type="radio"
+          value="light"
+        />
+        <label
+          class="switch-label switch-label-off"
+        >
+          Light
+        </label>
+        <input
+          class="switch-input"
+          id="dark"
+          name="theme"
+          readonly=""
+          type="radio"
+          value="dark"
+        />
+        <label
+          class="switch-label switch-label-on"
+        >
+          Dark
+        </label>
+        <span
+          class="switch-selection"
+        />
+      </div>
+    </div>
   </nav>,
   <div
     class="task"
@@ -95,13 +138,13 @@ Array [
           LogSelectionButton must remain a Class Component.
         </li>
         <li>
-          When you click on an animal tile (Whale, Cow or Hippo) e.g. Hippo then click the 
-            "Log my click to console" button then a corresponding message e.g. “You clicked: Hippo” 
+          When you click on an animal tile (Whale, Cow or Hippo) e.g. Hippo then click the
+            "Log my click to console" button then a corresponding message e.g. “You clicked: Hippo”
             is logged to the Javascript console after 5 seconds.
         </li>
         <li>
-          When you click all three animal tiles, within 5 seconds, with a click of the 
-          "Log my click to console" button between each animal tile click, a corresponding message 
+          When you click all three animal tiles, within 5 seconds, with a click of the
+          "Log my click to console" button between each animal tile click, a corresponding message
           is logged to the Javascript console for each animal tile.
         </li>
       </ol>
